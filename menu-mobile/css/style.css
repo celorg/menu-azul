@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+}
+body{
+    padding: 30px;
+
+    font-size: 14px;
+    background-image: linear-gradient(to bottom, #006edc, #1bc0b4);
+    background-repeat: no-repeat;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    background-attachment: fixed;
+}
+
+h1{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+h2{
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+p{
+    text-align: justify;
+}
+.icone-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 60px;
+    height: 60px;
+    background-color: #00014B;
+    font-size: 24px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.icone-box--azul {
+    position: fixed;
+    top: calc(50% - 30px);
+    left: 0;
+    background-color: #00014B;
+    z-index: 1;
+    
+}
+
+.icone-box--verde {
+    position: fixed;
+    top: 5px;
+    right: -60px;
+    background-color: #005A83;
+    z-index: 3;
+    transition: right 0.4s;
+}
+#Abre-fecha {
+    display: none;
+}
+#Abre-fecha:checked ~ nav {
+    left: 0;
+    opacity: 1;
+}
+#Abre-fecha:checked ~ .icone-box--verde {
+    right: calc(20% + 10px);
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: -80%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    z-index: 2;
+    opacity: 0;
+    transition: left 0.4s, opacity 0.7s;
+}
+
+.navbar a{
+    width: 80%;
+    border-left: #80ACC1 1px solid;
+    margin-bottom: 30px;
+    font-size: 15px;
+    color: #808080;
+    text-decoration: none;
+    padding: 10px;
+
+}
+
+
+@media screen and (min-width:768px){
+    h1{
+        font-size: 30px;
+    }
+    h2{
+        font-size: 25px;
+    }
+    p{
+        font-size: 20px;
+        line-height: 38px;
+    }
+    .icone-box {
+        height: 80px;
+        width: 80px;
+        font-size: 60px;
+    }
+
+    .navbar a{
+        font-size: 25px;
+    }
+    .icone-box--verde{
+    right: -80px;
+    }
+}
+
+@media screen and (min-width:992px){
+    body{
+        padding: 0;
+    }
+    .icone-box{
+        display: none;
+    }
+    .navbar{
+        position: static;
+        opacity: 1;
+        flex-direction: row;
+        padding: 20px 15%;
+        justify-content: space-between;
+        width: 100%;
+        height: auto;
+    }
+    .navbar a{
+        width: auto;
+        text-align: center;
+        font-size: 16px;
+        border-left: none;
+        /* border-bottom: 2px solid grey; */
+        margin-right: 10px;
+    }
+    .navbar a:hover {
+        border-bottom: 2px solid grey;
+}
